@@ -11,4 +11,3 @@ spring:
     mongodb:
       port: 27017
       database: logs
-content:admin
