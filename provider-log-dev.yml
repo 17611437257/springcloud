@@ -1,23 +1,14 @@
 server:
-  port: ${port:8762}
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+  port: ${port:8763}
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/JSP/
-      suffix: .jsp
   application:
-    name: provider-log
-  data:
-    mongodb:
-      port: 27017
-      database: logs
-  datasource:
-      url:  jdbc:mysql://localhost:3306/1708b?useUnicode=true&characterEncoding=utf-8
-      driverClassName: com.mysql.jdbc.Driver
-      username: root
-      password: root
-content:test
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/17611437257/springcloud
+          search-paths:
+          username:
+          password: 
+      label: master
